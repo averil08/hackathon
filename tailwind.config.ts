@@ -57,6 +57,22 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Ginhaw.AI Brand Colors
+        'ginhaw-blue': {
+          50: '#f0f9ff',
+          500: '#0d99ff',
+          600: '#0b87e6',
+          700: '#0975cc',
+        },
+        'ginhaw-navy': {
+          800: '#0f123f',
+          900: '#002f86',
+        },
+        'ginhaw-gray': {
+          400: '#a3a3a3',
+          500: '#717171',
+          600: '#646464',
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
