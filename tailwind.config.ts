@@ -74,6 +74,13 @@ export default {
           600: '#646464',
         },
       },
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+        'open-sans': ['Open Sans', 'sans-serif'],
+        'jaldi': ['Jaldi', 'sans-serif'],
+        'lato': ['Lato', 'sans-serif'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
