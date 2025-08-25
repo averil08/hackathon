@@ -13,7 +13,7 @@ export default function Register() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle registration submission
-    alert("Registration submitted! Our team will review your information and notify you once your listing is active on Ginhawa.AI.");
+    window.location.href = "/register/confirmation";
   };
 
   return (
