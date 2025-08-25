@@ -1,7 +1,26 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export default function RegisterConfirmation() {
+  const navigate = useNavigate();
+  const [countdown, setCountdown] = useState(5);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          navigate("/");
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [navigate]);
   return (
     <div className="min-h-screen bg-ginhaw-blue-50 relative overflow-hidden">
       <Header />
@@ -49,9 +68,22 @@ export default function RegisterConfirmation() {
             Thank you for using Ginhaw.AI
           </h1>
 
-          <p className="text-2xl text-gray-600/80 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-2xl text-gray-600/80 leading-relaxed max-w-2xl mx-auto mb-8">
             Our team will review your information and notify you once your listing is active on Ginhawa.AI.
           </p>
+
+          {/* Countdown and redirect message */}
+          <div className="mt-8 p-4 bg-ginhaw-blue-50 rounded-xl">
+            <p className="text-lg text-ginhaw-blue-600 font-medium">
+              Redirecting to homepage in {countdown} seconds...
+            </p>
+            <button
+              onClick={() => navigate("/")}
+              className="mt-3 text-ginhaw-blue-500 hover:text-ginhaw-blue-600 underline font-medium"
+            >
+              Go to homepage now
+            </button>
+          </div>
         </div>
       </div>
 
