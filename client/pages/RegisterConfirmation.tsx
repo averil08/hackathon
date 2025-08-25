@@ -9,18 +9,18 @@ export default function RegisterConfirmation() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          navigate("/");
-          return 0;
-        }
-        return prev - 1;
-      });
+      setCountdown((prev) => prev - 1);
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [navigate]);
+  }, []);
+
+  // Separate useEffect for navigation when countdown reaches 0
+  useEffect(() => {
+    if (countdown === 0) {
+      navigate("/");
+    }
+  }, [countdown, navigate]);
   return (
     <div className="min-h-screen bg-ginhaw-blue-50 relative overflow-hidden">
       <Header />
