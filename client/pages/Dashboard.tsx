@@ -89,7 +89,7 @@ export default function Dashboard() {
               </p>
             </div>
             <div
-              className="w-72 h-72 bg-white rounded-full flex items-center justify-center"
+              className="w-60 h-60 bg-white rounded-full flex items-center justify-center"
               style={{
                 backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2F79acc1a1bc0e482eba2688abb789a0c5)",
                 backgroundRepeat: "no-repeat",
