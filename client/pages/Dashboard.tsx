@@ -94,7 +94,7 @@ export default function Dashboard() {
                 backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2F79acc1a1bc0e482eba2688abb789a0c5)",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
-                backgroundSize: "cover"
+                backgroundSize: "80%"
               }}
             />
           </div>
