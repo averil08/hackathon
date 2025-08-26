@@ -163,9 +163,15 @@ export default function Dashboard() {
           {/* Most Requested Service */}
           <div className="bg-white rounded-xl p-8">
             <h3 className="text-2xl font-semibold text-ginhaw-blue-500 mb-4">Most Requested Service</h3>
-            <div className="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500">Service Chart</span>
-            </div>
+            <div
+              className="h-96 bg-white rounded-lg flex items-center justify-center"
+              style={{
+                backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2F1e98184adaf24516bf022d19b2994727)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "cover"
+              }}
+            />
           </div>
         </div>
       </section>
