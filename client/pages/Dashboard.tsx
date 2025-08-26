@@ -1,16 +1,54 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+type PatientStatus = "pending" | "completed" | "did-not-arrive";
+
+interface Patient {
+  id: number;
+  name: string;
+  age: number;
+  gender: string;
+  queueNumber: number;
+  status: PatientStatus;
+}
+
 export default function Dashboard() {
+  const navigate = useNavigate();
   const queueData = {
     patientsWaiting: 30,
     averageWait: 18,
     nowServing: 10
   };
 
-  const patientInsights = [
-    { name: "Dela Cruz, Maria Ciara", age: 24, gender: "F", queueNumber: 30 },
-    { name: "Fernando, Charlize Papyrus", age: 21, gender: "F", queueNumber: 45 },
-    { name: "Bachoco, Israel Vincent", age: 22, gender: "M", queueNumber: 46 },
-    { name: "Pangilinan, Sophia Rubie", age: 19, gender: "F", queueNumber: 70 }
-  ];
+  const [patients, setPatients] = useState<Patient[]>([
+    { id: 1, name: "Dela Cruz, Maria Ciara", age: 24, gender: "F", queueNumber: 30, status: "pending" },
+    { id: 2, name: "Fernando, Charlize Papyrus", age: 21, gender: "F", queueNumber: 45, status: "pending" },
+    { id: 3, name: "Bachoco, Israel Vincent", age: 22, gender: "M", queueNumber: 46, status: "pending" },
+    { id: 4, name: "Pangilinan, Sophia Rubie", age: 19, gender: "F", queueNumber: 70, status: "pending" }
+  ]);
+
+  const handleLogout = () => {
+    navigate("/");
+  };
+
+  const updatePatientStatus = (patientId: number, status: PatientStatus) => {
+    setPatients(prevPatients =>
+      prevPatients.map(patient =>
+        patient.id === patientId ? { ...patient, status } : patient
+      )
+    );
+  };
+
+  const getStatusDisplay = (status: PatientStatus) => {
+    switch (status) {
+      case "completed":
+        return <span className="text-green-600 font-medium">Completed</span>;
+      case "did-not-arrive":
+        return <span className="text-red-600 font-medium">Did Not Arrive</span>;
+      default:
+        return <span className="text-gray-600 font-medium">Pending</span>;
+    }
+  };
 
   return (
     <div className="min-h-screen bg-ginhaw-blue-50">
@@ -22,7 +60,10 @@ export default function Dashboard() {
               <span className="text-2xl font-bold text-ginhaw-blue-500">Ginhaw.AI</span>
             </div>
             
-            <button className="flex items-center gap-3 px-6 py-4 bg-ginhaw-blue-500 text-white rounded-3xl hover:bg-ginhaw-blue-600 transition-colors">
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-3 px-6 py-4 bg-ginhaw-blue-500 text-white rounded-3xl hover:bg-ginhaw-blue-600 transition-colors"
+            >
               <svg className="w-6 h-5 fill-white" viewBox="0 0 25 19">
                 <path d="M24.375 16.077H21.25V4.07127C21.25 3.093 20.409 2.29669 19.375 2.29669H15V4.59341H18.75V18.3738H24.375C24.7203 18.3738 25 18.1168 25 17.7996V16.6512C25 16.334 24.7203 16.077 24.375 16.077ZM12.1969 0.0362102L4.69688 1.82119C4.14023 1.95362 3.75 2.42947 3.75 2.97566V16.077H0.625C0.279687 16.077 0 16.334 0 16.6512V17.7996C0 18.1168 0.279687 18.3738 0.625 18.3738H13.75V1.19067C13.75 0.416246 12.9859 -0.151834 12.1969 0.0362102ZM10.3125 10.3352C9.79492 10.3352 9.375 9.82097 9.375 9.18686C9.375 8.55275 9.79492 8.0385 10.3125 8.0385C10.8301 8.0385 11.25 8.55275 11.25 9.18686C11.25 9.82097 10.8301 10.3352 10.3125 10.3352Z"/>
               </svg>
@@ -156,24 +197,38 @@ export default function Dashboard() {
                     <th className="text-left py-3 text-lg font-medium">Patient Name</th>
                     <th className="text-left py-3 text-lg font-medium">Age, Gender</th>
                     <th className="text-left py-3 text-lg font-medium">Queue Number</th>
+                    <th className="text-left py-3 text-lg font-medium">Status</th>
                     <th className="text-left py-3 text-lg font-medium">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {patientInsights.map((patient, index) => (
-                    <tr key={index} className="border-b">
+                  {patients.map((patient) => (
+                    <tr key={patient.id} className="border-b">
                       <td className="py-4 text-base">{patient.name}</td>
                       <td className="py-4 text-base">{patient.age}, {patient.gender}</td>
                       <td className="py-4 text-base">{patient.queueNumber}</td>
+                      <td className="py-4 text-base">{getStatusDisplay(patient.status)}</td>
                       <td className="py-4">
-                        <div className="space-y-2">
-                          <button className="w-24 bg-ginhaw-blue-500 text-white py-1 px-3 rounded text-sm font-medium">
-                            Complete
-                          </button>
-                          <button className="w-24 bg-ginhaw-blue-500 text-white py-1 px-3 rounded text-sm font-medium">
-                            Did Not Arrive
-                          </button>
-                        </div>
+                        {patient.status === "pending" ? (
+                          <div className="space-y-2">
+                            <button
+                              onClick={() => updatePatientStatus(patient.id, "completed")}
+                              className="w-28 bg-green-500 hover:bg-green-600 text-white py-1 px-3 rounded text-sm font-medium transition-colors"
+                            >
+                              Complete
+                            </button>
+                            <button
+                              onClick={() => updatePatientStatus(patient.id, "did-not-arrive")}
+                              className="w-28 bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded text-sm font-medium transition-colors"
+                            >
+                              Did Not Arrive
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="text-gray-500 text-sm">
+                            Status Updated
+                          </div>
+                        )}
                       </td>
                     </tr>
                   ))}
