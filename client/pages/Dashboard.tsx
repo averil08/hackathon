@@ -88,9 +88,15 @@ export default function Dashboard() {
                 Monitor patient referrals, update facility details, and manage service availability in real time.
               </p>
             </div>
-            <div className="w-72 h-72 bg-gray-300 rounded-full flex items-center justify-center">
-              <span className="text-gray-600">Dashboard Illustration</span>
-            </div>
+            <div
+              className="w-72 h-72 bg-white rounded-full flex items-center justify-center"
+              style={{
+                backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2F79acc1a1bc0e482eba2688abb789a0c5)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "cover"
+              }}
+            />
           </div>
         </div>
       </section>
