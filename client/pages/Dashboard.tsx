@@ -149,9 +149,15 @@ export default function Dashboard() {
           {/* Patients Trend */}
           <div className="col-span-2 bg-white rounded-xl p-8">
             <h3 className="text-2xl font-semibold text-ginhaw-blue-500 mb-4">Patients Trend</h3>
-            <div className="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500">Patients Trend Chart</span>
-            </div>
+            <div
+              className="h-96 bg-white rounded-lg flex items-center justify-center"
+              style={{
+                backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2Fbe8a497906a44885998a991ec6f5bf07)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "cover"
+              }}
+            />
           </div>
 
           {/* Most Requested Service */}
