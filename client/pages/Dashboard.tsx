@@ -179,7 +179,7 @@ export default function Dashboard() {
       {/* Facility Capacity */}
       <section className="py-8 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">
-          <div className="bg-white rounded-xl p-8">
+          <div className="bg-white rounded-xl p-8 mb-48">
             <h3 className="text-2xl font-semibold text-ginhaw-blue-500 mb-4">Facility Capacity</h3>
             <div className="flex items-center justify-center">
               <div className="relative w-48 h-48">
@@ -206,29 +206,29 @@ export default function Dashboard() {
           </div>
 
           {/* Patient Insights */}
-          <div className="col-span-2 bg-white rounded-xl p-8">
+          <div className="col-span-2 bg-white rounded-xl p-8 -mr-1">
             <h3 className="text-2xl font-semibold text-ginhaw-blue-500 mb-6">Patient Insights</h3>
             <div className="overflow-hidden">
               <table className="w-full">
                 <thead>
                   <tr className="border-b">
                     <th className="text-left py-3 text-lg font-medium">Patient Name</th>
-                    <th className="text-left py-3 text-lg font-medium">Age, Gender</th>
+                    <th className="text-left py-3 text-lg font-medium pl-2">Age, Gender</th>
                     <th className="text-left py-3 text-lg font-medium">Queue Number</th>
-                    <th className="text-left py-3 text-lg font-medium">Status</th>
-                    <th className="text-left py-3 text-lg font-medium">Action</th>
+                    <th className="text-left py-3 text-lg font-medium pl-3">Status</th>
+                    <th className="text-left py-3 text-lg font-medium pl-11">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   {patients.map((patient) => (
                     <tr key={patient.id} className="border-b">
                       <td className="py-4 text-base">{patient.name}</td>
-                      <td className="py-4 text-base">{patient.age}, {patient.gender}</td>
-                      <td className="py-4 text-base">{patient.queueNumber}</td>
-                      <td className="py-4 text-base">{getStatusDisplay(patient.status)}</td>
+                      <td className="py-4 text-base pl-3">{patient.age}, {patient.gender}</td>
+                      <td className="py-4 text-base pl-5">{patient.queueNumber}</td>
+                      <td className="py-4 text-base pl-2 pr-4">{getStatusDisplay(patient.status)}</td>
                       <td className="py-4">
                         {patient.status === "pending" ? (
-                          <div className="space-y-2">
+                          <div className="space-y-2 pl-5">
                             <button
                               onClick={() => updatePatientStatus(patient.id, "completed")}
                               className="w-28 bg-green-500 hover:bg-green-600 text-white py-1 px-3 rounded text-sm font-medium transition-colors"
