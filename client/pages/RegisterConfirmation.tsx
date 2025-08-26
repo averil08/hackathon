@@ -18,7 +18,7 @@ export default function RegisterConfirmation() {
   // Separate useEffect for navigation when countdown reaches 0
   useEffect(() => {
     if (countdown === 0) {
-      navigate("/");
+      navigate("/dashboard");
     }
   }, [countdown, navigate]);
   return (
@@ -75,13 +75,13 @@ export default function RegisterConfirmation() {
           {/* Countdown and redirect message */}
           <div className="mt-8 p-4 bg-ginhaw-blue-50 rounded-xl">
             <p className="text-lg text-ginhaw-blue-600 font-medium">
-              Redirecting to homepage in {countdown} seconds...
+              Redirecting to dashboard in {countdown} seconds...
             </p>
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/dashboard")}
               className="mt-3 text-ginhaw-blue-500 hover:text-ginhaw-blue-600 underline font-medium"
             >
-              Go to homepage now
+              Go to dashboard now
             </button>
           </div>
         </div>
