@@ -225,9 +225,21 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="mt-4 space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-blue-400 rounded"></div>
-                <span className="text-sm text-gray-600">Clinic Queue</span>
+              <div className="flex items-center gap-2 justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-blue-400 rounded"></div>
+                  <span className="text-sm text-gray-600">Clinic Queue</span>
+                </div>
+                <button
+                  onClick={toggleFacilityStatus}
+                  className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                    facilityStatus === "full"
+                      ? "bg-red-100 text-red-700 hover:bg-red-200"
+                      : "bg-green-100 text-green-700 hover:bg-green-200"
+                  }`}
+                >
+                  {facilityStatus === "full" ? "🔴 Full" : "🟢 Short"}
+                </button>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-red-400 rounded"></div>
