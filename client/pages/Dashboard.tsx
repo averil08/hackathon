@@ -306,7 +306,7 @@ export default function Dashboard() {
                     <th className="text-left py-3 text-lg font-medium">Age, Gender</th>
                     <th className="text-left py-3 text-lg font-medium pl-3">Queue #</th>
                     <th className="text-left py-3 text-lg font-medium pl-3">Status</th>
-                    <th className="text-left py-3 text-lg font-medium pl-25">Action</th>
+                    <th className="text-left py-3 text-lg font-medium pl-7">Action</th>
                   </tr>
                 </thead>
                 <tbody>
