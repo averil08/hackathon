@@ -199,7 +199,7 @@ export default function SelfCheckResults() {
                             )}
                           </div>
                         </div>
-                        
+
                         <div className="flex items-center gap-3">
                           <div className={`w-7 h-6 rounded-full ${provider.available ? 'bg-green-500' : 'bg-red-500'}`}></div>
                           <span className="text-lg font-normal tracking-wide">
@@ -221,12 +221,56 @@ export default function SelfCheckResults() {
                         </div>
                       )}
 
-                      {(provider.waitTime || provider.queueCount) && (
-                        <div className="text-right text-sm text-black space-y-1">
-                          {provider.waitTime && <div>{provider.waitTime}</div>}
-                          {provider.queueCount && <div>{provider.queueCount}</div>}
+                      <div className="flex items-center justify-between">
+                        {/* View Prices Button */}
+                        <div className="flex-1">
+                          {provider.pricing && (
+                            <Accordion type="single" collapsible className="w-full">
+                              <AccordionItem value={`pricing-${index}`} className="border-none">
+                                <AccordionTrigger className="text-lg font-medium text-ginhaw-blue-600 hover:text-ginhaw-blue-700 py-2 px-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:no-underline">
+                                  View Prices
+                                </AccordionTrigger>
+                                <AccordionContent className="pt-4">
+                                  <div className="bg-white rounded-lg p-4 shadow-sm">
+                                    <h5 className="text-lg font-semibold text-black mb-3">Price Details</h5>
+                                    <div className="space-y-2 max-h-48 overflow-y-auto">
+                                      {provider.pricing.map((price, priceIndex) => (
+                                        <div key={priceIndex} className="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+                                          <span className="text-base text-black font-medium">{price.service}:</span>
+                                          <div className="flex items-center gap-2">
+                                            {price.isFree && price.isPhilHealthCovered ? (
+                                              <div className="flex items-center gap-1 text-green-600 font-medium">
+                                                <Check className="h-4 w-4" />
+                                                <span>Free (PhilHealth Covered)</span>
+                                              </div>
+                                            ) : price.isUnavailable ? (
+                                              <span className="text-gray-500 font-medium">{price.price}</span>
+                                            ) : (
+                                              <span className="text-black font-medium">{price.price}</span>
+                                            )}
+                                          </div>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </AccordionContent>
+                              </AccordionItem>
+                            </Accordion>
+                          )}
                         </div>
-                      )}
+
+                        {/* Wait Time and Queue Info */}
+                        {(provider.waitTime || provider.queueCount) && (
+                          <div className="text-right text-base text-black space-y-1 ml-4">
+                            {provider.queueCount && (
+                              <div className="font-medium">
+                                Queue: {provider.queueCount.replace("people in queue", "patients")}
+                                {provider.waitTime && ` (~${provider.waitTime.replace(" wait time", "")})`}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
