@@ -197,7 +197,7 @@ export default function Dashboard() {
             <div
               className="bg-white rounded-lg flex items-center justify-center"
               style={{
-                height: "361px",
+                height: "419px",
                 backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2F1e98184adaf24516bf022d19b2994727)",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
@@ -230,8 +230,16 @@ export default function Dashboard() {
                   <div className="w-3 h-3 bg-blue-400 rounded"></div>
                   <span className="text-sm text-gray-600">Clinic Queue</span>
                 </div>
-                <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                  {queueData.patientsWaiting} patients
+                <span
+                  className="text-xs font-medium px-2 py-1 rounded"
+                  style={{ backgroundColor: "#0d99ff" }}
+                >
+                  <div style={{ color: "rgba(255, 255, 255, 1)" }}>
+                    {queueData.patientsWaiting}
+                  </div>
+                  <div style={{ color: "rgba(255, 255, 255, 1)" }}>
+                    &nbsp;Patients
+                  </div>
                 </span>
               </div>
               <div className="flex items-center gap-2 justify-between">
@@ -255,7 +263,10 @@ export default function Dashboard() {
           </div>
 
           {/* Patient Insights */}
-          <div className="col-span-2 bg-white rounded-xl p-8 -mr-1">
+          <div
+            className="col-span-2 bg-white rounded-xl p-8"
+            style={{ margin: "0 -4px 137px 0" }}
+          >
             <h3 className="text-2xl font-semibold text-ginhaw-blue-500 mb-6">Patient Insights</h3>
             <div className="overflow-hidden">
               <table className="w-full">
