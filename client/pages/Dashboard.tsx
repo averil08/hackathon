@@ -202,12 +202,13 @@ export default function Dashboard() {
           </div>
 
           {/* Most Requested Service */}
-          <div className="bg-white rounded-xl p-8">
+          <div className="bg-white rounded-xl p-8" style={{ marginBottom: "47px" }}>
             <h3 className="text-2xl font-semibold text-ginhaw-blue-500 mb-4">Most Requested Service</h3>
             <div
               className="bg-white rounded-lg flex items-center justify-center"
               style={{
-                height: "419px",
+                height: "367px",
+                margin: "-1px -1px -5px",
                 backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2F1e98184adaf24516bf022d19b2994727)",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
@@ -304,7 +305,7 @@ export default function Dashboard() {
                   <tr className="border-b">
                     <th className="text-left py-3 text-lg font-medium">Patient Name</th>
                     <th className="text-left py-3 text-lg font-medium">Age, Gender</th>
-                    <th className="text-left py-3 text-lg font-medium pl-3">Queue #</th>
+                    <th className="text-left py-3 text-lg font-medium pl-3">Queue Number</th>
                     <th className="text-left py-3 text-lg font-medium pl-3">Status</th>
                     <th className="text-left py-3 text-lg font-medium pl-7">Action</th>
                   </tr>
@@ -327,8 +328,8 @@ export default function Dashboard() {
                             </button>
                             <button
                               onClick={() => updatePatientStatus(patient.id, "did-not-arrive")}
-                              className="w-28 bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded font-medium transition-colors ml-4"
-                              style={{ fontSize: "13px" }}
+                              className="w-28 bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded font-medium transition-colors"
+                              style={{ fontSize: "13px", marginTop: "8px" }}
                             >
                               Did Not Arrive
                             </button>
