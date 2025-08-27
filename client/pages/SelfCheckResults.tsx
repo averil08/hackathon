@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { Check } from "lucide-react";
+
+interface PriceInfo {
+  service: string;
+  price: string;
+  isFree?: boolean;
+  isPhilHealthCovered?: boolean;
+  isUnavailable?: boolean;
+}
 
 interface HealthcareProvider {
   name: string;
@@ -11,6 +21,7 @@ interface HealthcareProvider {
   waitTime?: string;
   queueCount?: string;
   insurance?: string[];
+  pricing?: PriceInfo[];
 }
 
 export default function SelfCheckResults() {
