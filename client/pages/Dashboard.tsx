@@ -62,10 +62,20 @@ export default function Dashboard() {
       <header className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-24">
-            <div className="flex items-center">
+            <div className="flex items-center gap-3">
+              <div
+                className="w-14 h-14 rounded-full flex items-center justify-center"
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 1)",
+                  backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2Ff525d66211eb4da884d2bfce74a9d07e)",
+                  backgroundPosition: "50% 50%",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover"
+                }}
+              />
               <span className="text-2xl font-bold text-ginhaw-blue-500">Ginhaw.AI</span>
             </div>
-            
+
             <button
               onClick={handleLogout}
               className="flex items-center gap-3 px-6 py-4 bg-ginhaw-blue-500 text-white rounded-3xl hover:bg-ginhaw-blue-600 transition-colors"
@@ -75,27 +85,6 @@ export default function Dashboard() {
               </svg>
               <span className="text-2xl font-medium">Log Out</span>
             </button>
-
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                backgroundColor: "rgba(255, 255, 255, 1)",
-                backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2Ff525d66211eb4da884d2bfce74a9d07e)",
-                backgroundPosition: "50% 50%",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                borderRadius: "9999px",
-                fontWeight: "400",
-                height: "55px",
-                justifyContent: "center",
-                left: "328px",
-                position: "absolute",
-                top: "19px",
-                width: "53px",
-                pointerEvents: "auto"
-              }}
-            />
           </div>
         </div>
       </header>
@@ -237,16 +226,7 @@ export default function Dashboard() {
             <div className="flex items-center justify-center">
               <div className="relative w-48 h-48">
                 {/* Background Circle */}
-                <svg className="w-48 h-48 -rotate-90 drop-shadow-sm" viewBox="0 0 192 192">
-                  <defs>
-                    <filter id="glow">
-                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                      <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
-                  </defs>
+                <svg className="w-48 h-48 -rotate-90" viewBox="0 0 192 192">
                   <circle
                     cx="96"
                     cy="96"
@@ -266,7 +246,6 @@ export default function Dashboard() {
                     strokeDasharray="387 553"
                     strokeDashoffset="0"
                     strokeLinecap="round"
-                    filter="url(#glow)"
                     className="transition-all duration-1000 ease-out"
                   />
                 </svg>
