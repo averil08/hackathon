@@ -37,7 +37,14 @@ export default function SelfCheckResults() {
       available: true,
       waitTime: "25 mins wait time",
       queueCount: "12 people in queue",
-      insurance: ["Maxicare"]
+      insurance: ["Maxicare"],
+      pricing: [
+        { service: "General Consultation", price: "₱400 – ₱600" },
+        { service: "Kidney Function Test", price: "₱800 – ₱1,200" },
+        { service: "Dialysis Session", price: "₱2,500 – ₱3,000" },
+        { service: "Blood Test", price: "Free", isFree: true, isPhilHealthCovered: true },
+        { service: "Ultrasound", price: "₱1,000 – ₱1,500" }
+      ]
     },
     {
       name: "DOH Baguio General Hospital and Medical Center",
@@ -47,7 +54,14 @@ export default function SelfCheckResults() {
       available: false,
       waitTime: "39 mins wait time",
       queueCount: "45 people in queue",
-      insurance: ["PhilHealth"]
+      insurance: ["PhilHealth"],
+      pricing: [
+        { service: "General Consultation", price: "Free", isFree: true, isPhilHealthCovered: true },
+        { service: "X-ray", price: "Free", isFree: true, isPhilHealthCovered: true },
+        { service: "Blood Test", price: "Free", isFree: true, isPhilHealthCovered: true },
+        { service: "Emergency Care", price: "Free", isFree: true, isPhilHealthCovered: true },
+        { service: "Surgery Consultation", price: "Free", isFree: true, isPhilHealthCovered: true }
+      ]
     },
     {
       name: "Notre Dame De Chartres Hospital",
@@ -56,21 +70,40 @@ export default function SelfCheckResults() {
       contact: ["INFORMATION DESK (442-3765)"],
       available: true,
       queueCount: "25 people in queue",
-      insurance: ["PhilHealth"]
+      insurance: ["PhilHealth"],
+      pricing: [
+        { service: "General Consultation", price: "₱300 – ₱500" },
+        { service: "X-ray", price: "₱500 – ₱800" },
+        { service: "Blood Test", price: "Free", isFree: true, isPhilHealthCovered: true },
+        { service: "CT Scan", price: "₱3,000 – ₱5,000" },
+        { service: "Emergency Care", price: "₱800 – ₱1,200" }
+      ]
     },
     {
       name: "Pines City Doctors' Hospital",
       type: "Private Hospital - Tertiary-care hospital",
       address: "#16 KISAD ROAD",
       contact: ["To be announced"],
-      available: false
+      available: false,
+      pricing: [
+        { service: "General Consultation", price: "Check with clinic", isUnavailable: true },
+        { service: "X-ray", price: "Check with clinic", isUnavailable: true },
+        { service: "Blood Test", price: "Check with clinic", isUnavailable: true },
+        { service: "Emergency Care", price: "Check with clinic", isUnavailable: true }
+      ]
     },
     {
       name: "Doctor Anywhere",
       type: "24/7 Online Consultations",
       address: "",
       contact: [],
-      available: true
+      available: true,
+      pricing: [
+        { service: "General Consultation", price: "₱250 – ₱400" },
+        { service: "Specialist Consultation", price: "₱500 – ₱800" },
+        { service: "Follow-up Consultation", price: "₱200 – ₱300" },
+        { service: "Prescription Review", price: "₱150 – ₱250" }
+      ]
     }
   ];
 
