@@ -237,7 +237,16 @@ export default function Dashboard() {
             <div className="flex items-center justify-center">
               <div className="relative w-48 h-48">
                 {/* Background Circle */}
-                <svg className="w-48 h-48 -rotate-90" viewBox="0 0 192 192">
+                <svg className="w-48 h-48 -rotate-90 drop-shadow-sm" viewBox="0 0 192 192">
+                  <defs>
+                    <filter id="glow">
+                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                      <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
                   <circle
                     cx="96"
                     cy="96"
@@ -251,19 +260,20 @@ export default function Dashboard() {
                     cx="96"
                     cy="96"
                     r="88"
-                    stroke="#22c55e"
-                    strokeWidth="8"
+                    stroke="#16a34a"
+                    strokeWidth="10"
                     fill="none"
                     strokeDasharray="387 553"
                     strokeDashoffset="0"
                     strokeLinecap="round"
+                    filter="url(#glow)"
                     className="transition-all duration-1000 ease-out"
                   />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-green-500">70%</div>
-                    <div className="text-sm text-gray-500">Occupied</div>
+                    <div className="text-4xl font-bold text-green-600">70%</div>
+                    <div className="text-base text-gray-600 font-medium">Occupied</div>
                   </div>
                 </div>
               </div>
