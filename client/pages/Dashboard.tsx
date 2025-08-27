@@ -230,6 +230,16 @@ export default function Dashboard() {
                   <div className="w-3 h-3 bg-blue-400 rounded"></div>
                   <span className="text-sm text-gray-600">Clinic Queue</span>
                 </div>
+                <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                  {queueData.patientsWaiting} patients
+                </span>
+              </div>
+              <div className="flex items-center gap-2 justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-red-400 rounded"></div>
+                  <span className="text-sm text-gray-600">Peak Hours</span>
+                  <span className="text-xs text-red-500">⚠️ High Volume</span>
+                </div>
                 <button
                   onClick={toggleFacilityStatus}
                   className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
@@ -240,11 +250,6 @@ export default function Dashboard() {
                 >
                   {facilityStatus === "full" ? "🔴 Full" : "🟢 Short"}
                 </button>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-red-400 rounded"></div>
-                <span className="text-sm text-gray-600">Peak Hours</span>
-                <span className="text-xs text-red-500">⚠️ High Volume</span>
               </div>
             </div>
           </div>
