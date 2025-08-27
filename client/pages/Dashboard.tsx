@@ -236,7 +236,30 @@ export default function Dashboard() {
             <h3 className="text-2xl font-semibold text-ginhaw-blue-500 mb-4">Facility Capacity</h3>
             <div className="flex items-center justify-center">
               <div className="relative w-48 h-48">
-                <div className="w-48 h-48 rounded-full border-8 border-gray-200"></div>
+                {/* Background Circle */}
+                <svg className="w-48 h-48 -rotate-90" viewBox="0 0 192 192">
+                  <circle
+                    cx="96"
+                    cy="96"
+                    r="88"
+                    stroke="#e5e7eb"
+                    strokeWidth="8"
+                    fill="none"
+                  />
+                  {/* Progress Circle (70% filled) */}
+                  <circle
+                    cx="96"
+                    cy="96"
+                    r="88"
+                    stroke="#22c55e"
+                    strokeWidth="8"
+                    fill="none"
+                    strokeDasharray={`${2 * Math.PI * 88 * 0.7} ${2 * Math.PI * 88}`}
+                    strokeDashoffset="0"
+                    strokeLinecap="round"
+                    className="transition-all duration-1000 ease-out"
+                  />
+                </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-green-500">70%</div>
