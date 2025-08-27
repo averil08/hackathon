@@ -109,12 +109,17 @@ export default function Dashboard() {
             <div className="grid grid-cols-3 gap-8">
               {/* Patients Waiting */}
               <div className="bg-yellow-50 rounded-xl p-6 relative">
-                <div className="w-9 h-20 bg-orange-400 rounded-full absolute left-4 top-0 flex items-center justify-center">
-                  <svg className="w-6 h-12 fill-white" viewBox="0 0 36 79">
-                    <circle cx="18" cy="61" r="18" fill="#FF947A"/>
-                    <path d="M25.4304 7.49654C22.8272 7.49654 20.7211 9.43139 20.7211 11.8229C20.7211 14.2145 22.8272 16.1493 25.4304 16.1493C28.0336 16.1493 30.1397 14.2145 30.1397 11.8229C30.1397 9.43139 28.0336 7.49654 25.4304 7.49654Z" fill="white"/>
-                  </svg>
-                </div>
+                <div
+                  className="w-9 bg-orange-400 rounded-full absolute left-4 flex items-center justify-center"
+                  style={{
+                    height: "35px",
+                    top: "23px",
+                    backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2Ff272ae2fd21b4a1c92572ee4ced47193)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover"
+                  }}
+                />
                 <div className="ml-16">
                   <p className="text-sm text-gray-600 mb-2">Patients Waiting</p>
                   <p className="text-4xl font-bold text-gray-600">{queueData.patientsWaiting}</p>
@@ -123,7 +128,16 @@ export default function Dashboard() {
 
               {/* Average Wait */}
               <div className="bg-pink-50 rounded-xl p-6 relative">
-                <div className="w-9 h-9 bg-pink-400 rounded-full absolute left-4 top-6"></div>
+                <div
+                  className="w-9 h-9 bg-pink-400 rounded-full absolute left-4"
+                  style={{
+                    top: "23px",
+                    backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2F12f1e92c8a01420a8c3a86b3ad274386)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover"
+                  }}
+                />
                 <div className="ml-16">
                   <p className="text-sm text-gray-600 mb-2">Average Wait (min)</p>
                   <p className="text-4xl font-bold text-gray-600">{queueData.averageWait}</p>
@@ -132,7 +146,16 @@ export default function Dashboard() {
 
               {/* Now Serving */}
               <div className="bg-green-50 rounded-xl p-6 relative">
-                <div className="w-9 h-9 bg-green-400 rounded-full absolute left-4 top-6"></div>
+                <div
+                  className="w-9 h-9 bg-green-400 rounded-full absolute left-4"
+                  style={{
+                    top: "23px",
+                    backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2Fa76fd86f155149ccbd6fb70eaf22c52f)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover"
+                  }}
+                />
                 <div className="ml-16">
                   <p className="text-sm text-gray-600 mb-2">Now Serving</p>
                   <p className="text-4xl font-bold text-gray-600">{queueData.nowServing}</p>
