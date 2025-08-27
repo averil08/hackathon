@@ -170,11 +170,13 @@ export default function Dashboard() {
       <section className="py-8 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">
           {/* Patients Trend */}
-          <div className="col-span-2 bg-white rounded-xl p-8">
+          <div className="col-span-2 bg-white rounded-xl p-8" style={{ marginBottom: "-4px" }}>
             <h3 className="text-2xl font-semibold text-ginhaw-blue-500 mb-4">Patients Trend</h3>
             <div
-              className="h-96 bg-white rounded-lg flex items-center justify-center"
+              className="bg-white rounded-lg flex items-center justify-center"
               style={{
+                height: "425px",
+                margin: "0 -5px -5px -3px",
                 backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2Fbe8a497906a44885998a991ec6f5bf07)",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
@@ -187,8 +189,9 @@ export default function Dashboard() {
           <div className="bg-white rounded-xl p-8">
             <h3 className="text-2xl font-semibold text-ginhaw-blue-500 mb-4">Most Requested Service</h3>
             <div
-              className="h-96 bg-white rounded-lg flex items-center justify-center"
+              className="bg-white rounded-lg flex items-center justify-center"
               style={{
+                height: "361px",
                 backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2F1e98184adaf24516bf022d19b2994727)",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
