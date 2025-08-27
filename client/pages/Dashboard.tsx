@@ -33,6 +33,10 @@ export default function Dashboard() {
     navigate("/");
   };
 
+  const toggleFacilityStatus = () => {
+    setFacilityStatus(prevStatus => prevStatus === "full" ? "short" : "full");
+  };
+
   const updatePatientStatus = (patientId: number, status: PatientStatus) => {
     setPatients(prevPatients =>
       prevPatients.map(patient =>
