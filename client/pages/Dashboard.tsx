@@ -75,6 +75,27 @@ export default function Dashboard() {
               </svg>
               <span className="text-2xl font-medium">Log Out</span>
             </button>
+
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "rgba(255, 255, 255, 1)",
+                backgroundImage: "url(https://cdn.builder.io/api/v1/image/assets%2Fa1a425b01280465589496a6892b850bd%2Ff525d66211eb4da884d2bfce74a9d07e)",
+                backgroundPosition: "50% 50%",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                borderRadius: "9999px",
+                fontWeight: "400",
+                height: "55px",
+                justifyContent: "center",
+                left: "328px",
+                position: "absolute",
+                top: "19px",
+                width: "53px",
+                pointerEvents: "auto"
+              }}
+            />
           </div>
         </div>
       </header>
@@ -235,10 +256,7 @@ export default function Dashboard() {
                   style={{ backgroundColor: "#0d99ff" }}
                 >
                   <div style={{ color: "rgba(255, 255, 255, 1)" }}>
-                    {queueData.patientsWaiting}
-                  </div>
-                  <div style={{ color: "rgba(255, 255, 255, 1)" }}>
-                    &nbsp;Patients
+                    {queueData.patientsWaiting} Patients
                   </div>
                 </span>
               </div>
