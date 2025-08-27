@@ -73,9 +73,9 @@ export default function SelfCheck() {
       {/* Form Section */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto bg-white rounded-2xl p-12">
-          <form onSubmit={handleSubmit} className="space-y-16">
+          <form onSubmit={handleSubmit} className="space-y-8">
             {/* Name Field */}
-            <div className="space-y-6">
+            <div className="space-y-3">
               <label className="text-xl font-bold text-black tracking-wide">
                 Name
               </label>
@@ -90,11 +90,11 @@ export default function SelfCheck() {
             </div>
 
             {/* Sex Assignment */}
-            <div className="space-y-6">
+            <div className="space-y-3">
               <label className="text-xl font-bold text-black tracking-wide">
                 What was your sex assigned at birth?
               </label>
-              <div className="space-y-6">
+              <div className="space-y-2">
                 {["Female", "Male"].map((option) => (
                   <div key={option} className="bg-gray-200 rounded-xl p-4">
                     <label className="flex items-center gap-3 cursor-pointer">
@@ -117,7 +117,7 @@ export default function SelfCheck() {
             </div>
 
             {/* Age Field */}
-            <div className="space-y-6">
+            <div className="space-y-3">
               <label className="text-xl font-bold text-black tracking-wide">
                 How old are you?
               </label>
@@ -132,7 +132,7 @@ export default function SelfCheck() {
             </div>
 
             {/* Symptoms Field */}
-            <div className="space-y-6">
+            <div className="space-y-3">
               <label className="text-xl font-bold text-black tracking-wide">
                 What symptom is bothering you?
               </label>
@@ -150,11 +150,11 @@ export default function SelfCheck() {
             </div>
 
             {/* Medical History */}
-            <div className="space-y-6">
+            <div className="space-y-3">
               <label className="text-xl font-bold text-black tracking-wide">
                 Any other details we should know?
               </label>
-              <div className="space-y-4">
+              <div className="space-y-2">
                 {medicalHistoryOptions.map((option) => (
                   <div key={option} className="bg-gray-200 rounded-xl p-4">
                     <label className="flex items-center gap-3 cursor-pointer">
@@ -174,7 +174,7 @@ export default function SelfCheck() {
             </div>
 
             {/* Submit Button */}
-            <div className="text-center pt-8">
+            <div className="text-center pt-6">
               <button
                 type="submit"
                 className="px-8 py-3 bg-ginhaw-blue-500 text-white rounded-lg hover:bg-ginhaw-blue-600 transition-colors text-lg font-semibold"
