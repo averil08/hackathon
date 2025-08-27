@@ -20,6 +20,8 @@ export default function Dashboard() {
     nowServing: 10
   };
 
+  const [facilityStatus, setFacilityStatus] = useState<"full" | "short">("short");
+
   const [patients, setPatients] = useState<Patient[]>([
     { id: 1, name: "Dela Cruz, Maria Ciara", age: 24, gender: "F", queueNumber: 30, status: "pending" },
     { id: 2, name: "Fernando, Charlize Papyrus", age: 21, gender: "F", queueNumber: 45, status: "pending" },
