@@ -254,7 +254,7 @@ export default function Dashboard() {
                     stroke="#22c55e"
                     strokeWidth="8"
                     fill="none"
-                    strokeDasharray={`${2 * Math.PI * 88 * 0.7} ${2 * Math.PI * 88}`}
+                    strokeDasharray="387 553"
                     strokeDashoffset="0"
                     strokeLinecap="round"
                     className="transition-all duration-1000 ease-out"
