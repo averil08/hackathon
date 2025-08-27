@@ -78,11 +78,9 @@ export default function Index() {
       {/* AI Description Section */}
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto bg-ginhaw-navy-900/93 rounded-3xl p-16 text-center">
-          <p className="text-3xl text-white font-normal leading-normal">
-            <h3>
-              Ginhaw.AI is here to help! Our friendly artificial intelligence can assess your symptoms and recommend the best facilities for your needs.
-            </h3>
-          </p>
+          <h3 className="text-3xl text-white font-normal leading-normal">
+            Ginhaw.AI is here to help! Our friendly artificial intelligence can assess your symptoms and recommend the best facilities for your needs.
+          </h3>
         </div>
       </section>
 
