@@ -239,18 +239,18 @@ export default function Dashboard() {
                 <thead>
                   <tr className="border-b">
                     <th className="text-left py-3 text-lg font-medium">Patient Name</th>
-                    <th className="text-left py-3 text-lg font-medium pl-2">Age, Gender</th>
-                    <th className="text-left py-3 text-lg font-medium">Queue Number</th>
+                    <th className="text-left py-3 text-lg font-medium">Age, Gender</th>
+                    <th className="text-left py-3 text-lg font-medium pl-3">Queue #</th>
                     <th className="text-left py-3 text-lg font-medium pl-3">Status</th>
-                    <th className="text-left py-3 text-lg font-medium pl-11">Action</th>
+                    <th className="text-left py-3 text-lg font-medium pl-25">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   {patients.map((patient) => (
                     <tr key={patient.id} className="border-b">
                       <td className="py-4 text-base">{patient.name}</td>
-                      <td className="py-4 text-base pl-3">{patient.age}, {patient.gender}</td>
-                      <td className="py-4 text-base pl-5">{patient.queueNumber}</td>
+                      <td className="py-4 text-base">{patient.age}, {patient.gender}</td>
+                      <td className="py-4 text-base pl-3">{patient.queueNumber}</td>
                       <td className="py-4 text-base pl-2 pr-4">{getStatusDisplay(patient.status)}</td>
                       <td className="py-4">
                         {patient.status === "pending" ? (
@@ -263,7 +263,8 @@ export default function Dashboard() {
                             </button>
                             <button
                               onClick={() => updatePatientStatus(patient.id, "did-not-arrive")}
-                              className="w-28 bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded text-sm font-medium transition-colors"
+                              className="w-28 bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded font-medium transition-colors ml-4"
+                              style={{ fontSize: "13px" }}
                             >
                               Did Not Arrive
                             </button>
