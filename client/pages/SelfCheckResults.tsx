@@ -52,6 +52,10 @@ export default function SelfCheckResults() {
         { service: "Dialysis Session", price: "₱2,500 – ₱3,000" },
         { service: "Blood Test", price: "Free", isFree: true, isPhilHealthCovered: true },
         { service: "Ultrasound", price: "₱1,000 – ₱1,500" }
+      ],
+      doctors: [
+        { name: "Dr. Maria Santos", specialization: "Nephrology", availability: "Mon-Fri, 8AM-5PM" },
+        { name: "Dr. Juan Dela Cruz", specialization: "Internal Medicine", availability: "Mon-Wed-Fri, 9AM-3PM" }
       ]
     },
     {
