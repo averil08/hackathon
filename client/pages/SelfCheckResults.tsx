@@ -34,6 +34,7 @@ interface HealthcareProvider {
 export default function SelfCheckResults() {
   // For demo purposes, showing "Non-Urgent Care" results
   const [resultType] = useState<"self-care" | "non-urgent" | "urgent">("non-urgent");
+  const [openDoctorsDropdown, setOpenDoctorsDropdown] = useState<number | null>(null);
   
   const providers: HealthcareProvider[] = [
     {
