@@ -73,6 +73,12 @@ export default function SelfCheckResults() {
         { service: "Blood Test", price: "Free", isFree: true, isPhilHealthCovered: true },
         { service: "Emergency Care", price: "Free", isFree: true, isPhilHealthCovered: true },
         { service: "Surgery Consultation", price: "Free", isFree: true, isPhilHealthCovered: true }
+      ],
+      doctors: [
+        { name: "Dr. Rosa Fernandez", specialization: "Emergency Medicine", availability: "24/7" },
+        { name: "Dr. Carlos Reyes", specialization: "Internal Medicine", availability: "Mon-Fri, 7AM-4PM" },
+        { name: "Dr. Ana Gonzales", specialization: "Pediatrics", availability: "Tue-Thu-Sat, 8AM-12PM" },
+        { name: "Dr. Miguel Torres", specialization: "Surgery", availability: "Mon-Wed-Fri, 10AM-6PM" }
       ]
     },
     {
@@ -89,6 +95,11 @@ export default function SelfCheckResults() {
         { service: "Blood Test", price: "Free", isFree: true, isPhilHealthCovered: true },
         { service: "CT Scan", price: "₱3,000 – ₱5,000" },
         { service: "Emergency Care", price: "₱800 – ₱1,200" }
+      ],
+      doctors: [
+        { name: "Dr. Patricia Cruz", specialization: "Cardiology", availability: "Mon-Wed-Fri, 9AM-5PM" },
+        { name: "Dr. Roberto Silva", specialization: "Orthopedics", availability: "Tue-Thu, 10AM-4PM" },
+        { name: "Dr. Elena Ramos", specialization: "Gynecology", availability: "Mon-Thu, 8AM-12PM" }
       ]
     },
     {
@@ -102,6 +113,10 @@ export default function SelfCheckResults() {
         { service: "X-ray", price: "Check with clinic", isUnavailable: true },
         { service: "Blood Test", price: "Check with clinic", isUnavailable: true },
         { service: "Emergency Care", price: "Check with clinic", isUnavailable: true }
+      ],
+      doctors: [
+        { name: "Dr. Antonio Mendoza", specialization: "Internal Medicine", availability: "By appointment" },
+        { name: "Dr. Sofia Valdez", specialization: "Dermatology", availability: "By appointment" }
       ]
     },
     {
@@ -115,6 +130,11 @@ export default function SelfCheckResults() {
         { service: "Specialist Consultation", price: "₱500 – ₱800" },
         { service: "Follow-up Consultation", price: "₱200 – ₱300" },
         { service: "Prescription Review", price: "₱150 – ₱250" }
+      ],
+      doctors: [
+        { name: "Dr. James Park", specialization: "Telemedicine", availability: "24/7 Online" },
+        { name: "Dr. Sarah Kim", specialization: "General Practice", availability: "Daily, 6AM-11PM" },
+        { name: "Dr. Michael Chen", specialization: "Mental Health", availability: "Mon-Fri, 9AM-8PM" }
       ]
     }
   ];
