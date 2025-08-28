@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import { Check } from "lucide-react";
+import { Check, Download, ChevronDown } from "lucide-react";
 
 interface PriceInfo {
   service: string;
