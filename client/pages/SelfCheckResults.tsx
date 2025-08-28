@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 import { Check, Download, ChevronDown } from "lucide-react";
 
 interface PriceInfo {
@@ -33,9 +38,13 @@ interface HealthcareProvider {
 
 export default function SelfCheckResults() {
   // For demo purposes, showing "Non-Urgent Care" results
-  const [resultType] = useState<"self-care" | "non-urgent" | "urgent">("non-urgent");
-  const [openDoctorsDropdown, setOpenDoctorsDropdown] = useState<number | null>(null);
-  
+  const [resultType] = useState<"self-care" | "non-urgent" | "urgent">(
+    "non-urgent",
+  );
+  const [openDoctorsDropdown, setOpenDoctorsDropdown] = useState<number | null>(
+    null,
+  );
+
   const providers: HealthcareProvider[] = [
     {
       name: "CORDILLERA KIDNEY SPECIALISTS, INC.",
@@ -50,13 +59,26 @@ export default function SelfCheckResults() {
         { service: "General Consultation", price: "₱400 – ₱600" },
         { service: "Kidney Function Test", price: "₱800 – ₱1,200" },
         { service: "Dialysis Session", price: "₱2,500 – ₱3,000" },
-        { service: "Blood Test", price: "Free", isFree: true, isPhilHealthCovered: true },
-        { service: "Ultrasound", price: "₱1,000 – ₱1,500" }
+        {
+          service: "Blood Test",
+          price: "Free",
+          isFree: true,
+          isPhilHealthCovered: true,
+        },
+        { service: "Ultrasound", price: "₱1,000 – ₱1,500" },
       ],
       doctors: [
-        { name: "Dr. Maria Santos", specialization: "Nephrology", availability: "Mon-Fri, 8AM-5PM" },
-        { name: "Dr. Juan Dela Cruz", specialization: "Internal Medicine", availability: "Mon-Wed-Fri, 9AM-3PM" }
-      ]
+        {
+          name: "Dr. Maria Santos",
+          specialization: "Nephrology",
+          availability: "Mon-Fri, 8AM-5PM",
+        },
+        {
+          name: "Dr. Juan Dela Cruz",
+          specialization: "Internal Medicine",
+          availability: "Mon-Wed-Fri, 9AM-3PM",
+        },
+      ],
     },
     {
       name: "DOH Baguio General Hospital and Medical Center",
@@ -68,18 +90,59 @@ export default function SelfCheckResults() {
       queueCount: "45 people in queue",
       insurance: ["PhilHealth"],
       pricing: [
-        { service: "General Consultation", price: "Free", isFree: true, isPhilHealthCovered: true },
-        { service: "X-ray", price: "Free", isFree: true, isPhilHealthCovered: true },
-        { service: "Blood Test", price: "Free", isFree: true, isPhilHealthCovered: true },
-        { service: "Emergency Care", price: "Free", isFree: true, isPhilHealthCovered: true },
-        { service: "Surgery Consultation", price: "Free", isFree: true, isPhilHealthCovered: true }
+        {
+          service: "General Consultation",
+          price: "Free",
+          isFree: true,
+          isPhilHealthCovered: true,
+        },
+        {
+          service: "X-ray",
+          price: "Free",
+          isFree: true,
+          isPhilHealthCovered: true,
+        },
+        {
+          service: "Blood Test",
+          price: "Free",
+          isFree: true,
+          isPhilHealthCovered: true,
+        },
+        {
+          service: "Emergency Care",
+          price: "Free",
+          isFree: true,
+          isPhilHealthCovered: true,
+        },
+        {
+          service: "Surgery Consultation",
+          price: "Free",
+          isFree: true,
+          isPhilHealthCovered: true,
+        },
       ],
       doctors: [
-        { name: "Dr. Rosa Fernandez", specialization: "Emergency Medicine", availability: "24/7" },
-        { name: "Dr. Carlos Reyes", specialization: "Internal Medicine", availability: "Mon-Fri, 7AM-4PM" },
-        { name: "Dr. Ana Gonzales", specialization: "Pediatrics", availability: "Tue-Thu-Sat, 8AM-12PM" },
-        { name: "Dr. Miguel Torres", specialization: "Surgery", availability: "Mon-Wed-Fri, 10AM-6PM" }
-      ]
+        {
+          name: "Dr. Rosa Fernandez",
+          specialization: "Emergency Medicine",
+          availability: "24/7",
+        },
+        {
+          name: "Dr. Carlos Reyes",
+          specialization: "Internal Medicine",
+          availability: "Mon-Fri, 7AM-4PM",
+        },
+        {
+          name: "Dr. Ana Gonzales",
+          specialization: "Pediatrics",
+          availability: "Tue-Thu-Sat, 8AM-12PM",
+        },
+        {
+          name: "Dr. Miguel Torres",
+          specialization: "Surgery",
+          availability: "Mon-Wed-Fri, 10AM-6PM",
+        },
+      ],
     },
     {
       name: "Notre Dame De Chartres Hospital",
@@ -92,15 +155,32 @@ export default function SelfCheckResults() {
       pricing: [
         { service: "General Consultation", price: "₱300 – ₱500" },
         { service: "X-ray", price: "₱500 – ₱800" },
-        { service: "Blood Test", price: "Free", isFree: true, isPhilHealthCovered: true },
+        {
+          service: "Blood Test",
+          price: "Free",
+          isFree: true,
+          isPhilHealthCovered: true,
+        },
         { service: "CT Scan", price: "₱3,000 – ₱5,000" },
-        { service: "Emergency Care", price: "₱800 – ₱1,200" }
+        { service: "Emergency Care", price: "₱800 – ₱1,200" },
       ],
       doctors: [
-        { name: "Dr. Patricia Cruz", specialization: "Cardiology", availability: "Mon-Wed-Fri, 9AM-5PM" },
-        { name: "Dr. Roberto Silva", specialization: "Orthopedics", availability: "Tue-Thu, 10AM-4PM" },
-        { name: "Dr. Elena Ramos", specialization: "Gynecology", availability: "Mon-Thu, 8AM-12PM" }
-      ]
+        {
+          name: "Dr. Patricia Cruz",
+          specialization: "Cardiology",
+          availability: "Mon-Wed-Fri, 9AM-5PM",
+        },
+        {
+          name: "Dr. Roberto Silva",
+          specialization: "Orthopedics",
+          availability: "Tue-Thu, 10AM-4PM",
+        },
+        {
+          name: "Dr. Elena Ramos",
+          specialization: "Gynecology",
+          availability: "Mon-Thu, 8AM-12PM",
+        },
+      ],
     },
     {
       name: "Pines City Doctors' Hospital",
@@ -109,15 +189,35 @@ export default function SelfCheckResults() {
       contact: ["To be announced"],
       available: false,
       pricing: [
-        { service: "General Consultation", price: "Check with clinic", isUnavailable: true },
+        {
+          service: "General Consultation",
+          price: "Check with clinic",
+          isUnavailable: true,
+        },
         { service: "X-ray", price: "Check with clinic", isUnavailable: true },
-        { service: "Blood Test", price: "Check with clinic", isUnavailable: true },
-        { service: "Emergency Care", price: "Check with clinic", isUnavailable: true }
+        {
+          service: "Blood Test",
+          price: "Check with clinic",
+          isUnavailable: true,
+        },
+        {
+          service: "Emergency Care",
+          price: "Check with clinic",
+          isUnavailable: true,
+        },
       ],
       doctors: [
-        { name: "Dr. Antonio Mendoza", specialization: "Internal Medicine", availability: "By appointment" },
-        { name: "Dr. Sofia Valdez", specialization: "Dermatology", availability: "By appointment" }
-      ]
+        {
+          name: "Dr. Antonio Mendoza",
+          specialization: "Internal Medicine",
+          availability: "By appointment",
+        },
+        {
+          name: "Dr. Sofia Valdez",
+          specialization: "Dermatology",
+          availability: "By appointment",
+        },
+      ],
     },
     {
       name: "Doctor Anywhere",
@@ -129,14 +229,26 @@ export default function SelfCheckResults() {
         { service: "General Consultation", price: "₱250 – ₱400" },
         { service: "Specialist Consultation", price: "₱500 – ₱800" },
         { service: "Follow-up Consultation", price: "₱200 – ₱300" },
-        { service: "Prescription Review", price: "₱150 – ₱250" }
+        { service: "Prescription Review", price: "₱150 – ₱250" },
       ],
       doctors: [
-        { name: "Dr. James Park", specialization: "Telemedicine", availability: "24/7 Online" },
-        { name: "Dr. Sarah Kim", specialization: "General Practice", availability: "Daily, 6AM-11PM" },
-        { name: "Dr. Michael Chen", specialization: "Mental Health", availability: "Mon-Fri, 9AM-8PM" }
-      ]
-    }
+        {
+          name: "Dr. James Park",
+          specialization: "Telemedicine",
+          availability: "24/7 Online",
+        },
+        {
+          name: "Dr. Sarah Kim",
+          specialization: "General Practice",
+          availability: "Daily, 6AM-11PM",
+        },
+        {
+          name: "Dr. Michael Chen",
+          specialization: "Mental Health",
+          availability: "Mon-Fri, 9AM-8PM",
+        },
+      ],
+    },
   ];
 
   const getResultContent = () => {
@@ -144,20 +256,23 @@ export default function SelfCheckResults() {
       case "self-care":
         return {
           title: "Result: Self-Care Recommended",
-          description: "Your symptoms do not currently require a clinic or hospital visit. You can manage your condition at home with rest, hydration, and monitoring.\n\nNext Steps:\nContinue observing your symptoms over the next few days\n\nIf your condition worsens or new symptoms appear, return to Ginhawa.AI or seek medical advice\n\nPractice healthy habits and stay informed\n\n💡 This result is based on your answers. If you feel unsure, you may still consult a healthcare provider.",
-          showProviders: false
+          description:
+            "Your symptoms do not currently require a clinic or hospital visit. You can manage your condition at home with rest, hydration, and monitoring.\n\nNext Steps:\nContinue observing your symptoms over the next few days\n\nIf your condition worsens or new symptoms appear, return to Ginhawa.AI or seek medical advice\n\nPractice healthy habits and stay informed\n\n💡 This result is based on your answers. If you feel unsure, you may still consult a healthcare provider.",
+          showProviders: false,
         };
       case "urgent":
         return {
           title: "Result: Urgent Care Recommended",
-          description: "Your symptoms may require immediate medical attention. We strongly advise visiting a healthcare facility as soon as possible.\n\nNext Steps:\nChoose a nearby clinic or hospital from the list below\n\nBring your health card or ID, if available\n\nInform the staff about your symptoms upon arrival\n\n⚠️ If symptoms worsen or you experience severe pain, difficulty breathing, or confusion, go to the nearest emergency facility or call for help.",
-          showProviders: true
+          description:
+            "Your symptoms may require immediate medical attention. We strongly advise visiting a healthcare facility as soon as possible.\n\nNext Steps:\nChoose a nearby clinic or hospital from the list below\n\nBring your health card or ID, if available\n\nInform the staff about your symptoms upon arrival\n\n⚠️ If symptoms worsen or you experience severe pain, difficulty breathing, or confusion, go to the nearest emergency facility or call for help.",
+          showProviders: true,
         };
       default: // non-urgent
         return {
           title: "Result: Non-Urgent Care Recommended",
-          description: "Your symptoms suggest that a medical check-up is advisable, but not urgent.\n\nWe recommend scheduling a consultation with a nearby healthcare provider within the next few days.\n\nNext Steps:\nChoose and call a clinic or hospital near you from the list below\n\nBring your health card or ID, if available\n\nMonitor your symptoms and seek care sooner if they worsen",
-          showProviders: true
+          description:
+            "Your symptoms suggest that a medical check-up is advisable, but not urgent.\n\nWe recommend scheduling a consultation with a nearby healthcare provider within the next few days.\n\nNext Steps:\nChoose and call a clinic or hospital near you from the list below\n\nBring your health card or ID, if available\n\nMonitor your symptoms and seek care sooner if they worsen",
+          showProviders: true,
         };
     }
   };
@@ -170,7 +285,7 @@ export default function SelfCheckResults() {
       date: new Date().toLocaleDateString(),
       result: content.title,
       recommendation: content.description,
-      providersCount: content.showProviders ? providers.length : 0
+      providersCount: content.showProviders ? providers.length : 0,
     };
 
     // Convert to text format
@@ -184,17 +299,17 @@ Result: ${assessmentData.result}
 Recommendation:
 ${assessmentData.recommendation}
 
-${content.showProviders ? `\nRecommended Healthcare Providers: ${assessmentData.providersCount} facilities found` : ''}
+${content.showProviders ? `\nRecommended Healthcare Providers: ${assessmentData.providersCount} facilities found` : ""}
 
 Generated by Ginhaw.AI - Your Guide to Right Healthcare
     `.trim();
 
     // Create and download file
-    const blob = new Blob([assessmentText], { type: 'text/plain' });
+    const blob = new Blob([assessmentText], { type: "text/plain" });
     const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
-    link.download = `ginhaw-assessment-${new Date().toISOString().split('T')[0]}.txt`;
+    link.download = `ginhaw-assessment-${new Date().toISOString().split("T")[0]}.txt`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -204,7 +319,7 @@ Generated by Ginhaw.AI - Your Guide to Right Healthcare
   return (
     <div className="min-h-screen bg-ginhaw-blue-50">
       <Header />
-      
+
       {/* Title Section */}
       <section className="py-8 px-6">
         <div className="max-w-7xl mx-auto text-center">
@@ -212,8 +327,9 @@ Generated by Ginhaw.AI - Your Guide to Right Healthcare
             Self-Check
           </h1>
           <p className="text-2xl text-ginhaw-navy-800 tracking-wide leading-normal max-w-5xl mx-auto">
-            This tool is not a replacement for medical advice, diagnosis, or treatment.
-            If you have a life-threatening emergency, call 911 or your local emergency number.
+            This tool is not a replacement for medical advice, diagnosis, or
+            treatment. If you have a life-threatening emergency, call 911 or
+            your local emergency number.
           </p>
         </div>
       </section>
@@ -253,8 +369,12 @@ Generated by Ginhaw.AI - Your Guide to Right Healthcare
             {content.showProviders && (
               <div className="mt-8">
                 <div className="mb-8">
-                  <h3 className="text-2xl font-semibold text-black mb-2">Healthcare Providers</h3>
-                  <p className="text-2xl text-black font-light">Below is a list of clinics you can visit.</p>
+                  <h3 className="text-2xl font-semibold text-black mb-2">
+                    Healthcare Providers
+                  </h3>
+                  <p className="text-2xl text-black font-light">
+                    Below is a list of clinics you can visit.
+                  </p>
                 </div>
 
                 <div className="space-y-6">
@@ -272,21 +392,27 @@ Generated by Ginhaw.AI - Your Guide to Right Healthcare
                               <span>{provider.address}</span>
                             </>
                           )}
-                          {provider.insurance && provider.insurance.length > 0 && (
-                            <>
-                              <span className="text-black">|</span>
-                              <span>{provider.insurance.join(", ")}</span>
-                            </>
-                          )}
+                          {provider.insurance &&
+                            provider.insurance.length > 0 && (
+                              <>
+                                <span className="text-black">|</span>
+                                <span>{provider.insurance.join(", ")}</span>
+                              </>
+                            )}
                         </div>
                       </div>
 
                       {provider.contact.length > 0 && (
                         <div className="mb-4">
-                          <span className="text-lg font-normal text-black tracking-wide">Contact: </span>
+                          <span className="text-lg font-normal text-black tracking-wide">
+                            Contact:{" "}
+                          </span>
                           <div className="mt-1">
                             {provider.contact.map((contact, contactIndex) => (
-                              <span key={contactIndex} className="text-lg font-light text-black tracking-wide mr-4">
+                              <span
+                                key={contactIndex}
+                                className="text-lg font-light text-black tracking-wide mr-4"
+                              >
                                 {contact}
                               </span>
                             ))}
@@ -298,32 +424,55 @@ Generated by Ginhaw.AI - Your Guide to Right Healthcare
                         {/* View Prices Button */}
                         <div className="flex-1">
                           {provider.pricing && (
-                            <Accordion type="single" collapsible className="w-full">
-                              <AccordionItem value={`pricing-${index}`} className="border-none">
+                            <Accordion
+                              type="single"
+                              collapsible
+                              className="w-full"
+                            >
+                              <AccordionItem
+                                value={`pricing-${index}`}
+                                className="border-none"
+                              >
                                 <AccordionTrigger className="text-lg font-medium text-ginhaw-blue-600 hover:text-ginhaw-blue-700 py-2 px-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:no-underline">
                                   View Prices
                                 </AccordionTrigger>
                                 <AccordionContent className="pt-4">
                                   <div className="bg-white rounded-lg p-4 shadow-sm">
-                                    <h5 className="text-lg font-semibold text-black mb-3">Price Details</h5>
+                                    <h5 className="text-lg font-semibold text-black mb-3">
+                                      Price Details
+                                    </h5>
                                     <div className="space-y-2 max-h-48 overflow-y-auto">
-                                      {provider.pricing.map((price, priceIndex) => (
-                                        <div key={priceIndex} className="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
-                                          <span className="text-base text-black font-medium">{price.service}:</span>
-                                          <div className="flex items-center gap-2">
-                                            {price.isFree && price.isPhilHealthCovered ? (
-                                              <div className="flex items-center gap-1 text-green-600 font-medium">
-                                                <Check className="h-4 w-4" />
-                                                <span>Free (PhilHealth Covered)</span>
-                                              </div>
-                                            ) : price.isUnavailable ? (
-                                              <span className="text-gray-500 font-medium">{price.price}</span>
-                                            ) : (
-                                              <span className="text-black font-medium">{price.price}</span>
-                                            )}
+                                      {provider.pricing.map(
+                                        (price, priceIndex) => (
+                                          <div
+                                            key={priceIndex}
+                                            className="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0"
+                                          >
+                                            <span className="text-base text-black font-medium">
+                                              {price.service}:
+                                            </span>
+                                            <div className="flex items-center gap-2">
+                                              {price.isFree &&
+                                              price.isPhilHealthCovered ? (
+                                                <div className="flex items-center gap-1 text-green-600 font-medium">
+                                                  <Check className="h-4 w-4" />
+                                                  <span>
+                                                    Free (PhilHealth Covered)
+                                                  </span>
+                                                </div>
+                                              ) : price.isUnavailable ? (
+                                                <span className="text-gray-500 font-medium">
+                                                  {price.price}
+                                                </span>
+                                              ) : (
+                                                <span className="text-black font-medium">
+                                                  {price.price}
+                                                </span>
+                                              )}
+                                            </div>
                                           </div>
-                                        </div>
-                                      ))}
+                                        ),
+                                      )}
                                     </div>
                                   </div>
                                 </AccordionContent>
@@ -337,24 +486,45 @@ Generated by Ginhaw.AI - Your Guide to Right Healthcare
                           {provider.doctors && (
                             <div className="relative">
                               <button
-                                onClick={() => setOpenDoctorsDropdown(openDoctorsDropdown === index ? null : index)}
+                                onClick={() =>
+                                  setOpenDoctorsDropdown(
+                                    openDoctorsDropdown === index
+                                      ? null
+                                      : index,
+                                  )
+                                }
                                 className="w-full text-lg font-medium text-ginhaw-blue-600 hover:text-ginhaw-blue-700 py-2 px-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-between"
                               >
                                 Doctors Available
-                                <ChevronDown className={`h-4 w-4 transition-transform ${openDoctorsDropdown === index ? 'rotate-180' : ''}`} />
+                                <ChevronDown
+                                  className={`h-4 w-4 transition-transform ${openDoctorsDropdown === index ? "rotate-180" : ""}`}
+                                />
                               </button>
                               {openDoctorsDropdown === index && (
                                 <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 z-10">
                                   <div className="p-4">
-                                    <h5 className="text-lg font-semibold text-black mb-3">Available Doctors</h5>
+                                    <h5 className="text-lg font-semibold text-black mb-3">
+                                      Available Doctors
+                                    </h5>
                                     <div className="space-y-3 max-h-48 overflow-y-auto">
-                                      {provider.doctors.map((doctor, doctorIndex) => (
-                                        <div key={doctorIndex} className="pb-3 border-b border-gray-100 last:border-b-0">
-                                          <div className="font-medium text-black">{doctor.name}</div>
-                                          <div className="text-sm text-ginhaw-blue-600 font-medium">{doctor.specialization}</div>
-                                          <div className="text-sm text-gray-600">{doctor.availability}</div>
-                                        </div>
-                                      ))}
+                                      {provider.doctors.map(
+                                        (doctor, doctorIndex) => (
+                                          <div
+                                            key={doctorIndex}
+                                            className="pb-3 border-b border-gray-100 last:border-b-0"
+                                          >
+                                            <div className="font-medium text-black">
+                                              {doctor.name}
+                                            </div>
+                                            <div className="text-sm text-ginhaw-blue-600 font-medium">
+                                              {doctor.specialization}
+                                            </div>
+                                            <div className="text-sm text-gray-600">
+                                              {doctor.availability}
+                                            </div>
+                                          </div>
+                                        ),
+                                      )}
                                     </div>
                                   </div>
                                 </div>
@@ -371,8 +541,8 @@ Generated by Ginhaw.AI - Your Guide to Right Healthcare
 
             {/* Retake Assessment Button */}
             <div className="text-center mt-12">
-              <button 
-                onClick={() => window.location.href = '/self-check'}
+              <button
+                onClick={() => (window.location.href = "/self-check")}
                 className="px-8 py-4 bg-ginhaw-blue-500 text-white rounded-lg hover:bg-ginhaw-blue-600 transition-colors text-lg font-semibold"
               >
                 Retake Assessment
