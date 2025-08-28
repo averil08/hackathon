@@ -12,6 +12,12 @@ interface PriceInfo {
   isUnavailable?: boolean;
 }
 
+interface Doctor {
+  name: string;
+  specialization: string;
+  availability: string;
+}
+
 interface HealthcareProvider {
   name: string;
   type: string;
@@ -22,6 +28,7 @@ interface HealthcareProvider {
   queueCount?: string;
   insurance?: string[];
   pricing?: PriceInfo[];
+  doctors?: Doctor[];
 }
 
 export default function SelfCheckResults() {
